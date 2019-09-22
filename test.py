@@ -1,5 +1,5 @@
 #coding:utf-8
-__auth0r__ = 'ljy'
+__author__ = 'ljy'
 
 '''
 #赋值abcd，并打印类型
@@ -165,6 +165,6 @@ else:
 s = [1,2,3,4,5,6,7,8,9,10]
 b = int(input('please input >>'))
 if b in s:
-    print('b在列表s中')
+    print('b在列表中')
 else:
-    print('b不在列表中')
+    print(b+'不在列表中')
