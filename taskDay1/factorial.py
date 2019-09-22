@@ -13,11 +13,11 @@ print(fac1)
 
 fac2 = 1
 j = 1
-a = int(input('please input a number >>'))
-if (a <= 0):
+n = int(input('please input a number >>'))
+if (n <= 0):
     print('请输入正整数')
 else:
-    while (j <= a):
+    while (j <= n):
         fac2 = fac2 * j
         j = j + 1
 if (fac2 > 1):
