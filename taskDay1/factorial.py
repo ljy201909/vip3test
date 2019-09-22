@@ -1,6 +1,7 @@
 #coding:utf-8
 __author__ = 'ljy'
 
+#10的阶乘
 fac1 = 1
 
 i = 1
@@ -10,7 +11,7 @@ while (i <= 10):
 
 print(fac1)
 
-
+#任意输入一个正整数，求阶乘
 fac2 = 1
 j = 1
 n = int(input('please input a number >>'))
