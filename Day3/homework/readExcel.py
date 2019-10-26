@@ -7,6 +7,7 @@ import requests
 import json
 
 
+
 def readExcel():
     filename = r'E:\\code\\vip3test\\Day3\\homework\\data.xlsx'
     inwd = openpyxl.load_workbook(filename)
@@ -36,6 +37,7 @@ def returnSheet(ws):
     # for i in range(len(L)):
     #     for j in range(len(L[i])):
     #         L[i][j] = L[i][j].encode('gb18030') #将unicode转化为str
+
     return L
 
 def test1(L1,L2):
@@ -58,25 +60,31 @@ def writeResult(i,result):
     ws = wb['result']
     #写入数据，i是行和编号，result是结果
     ws['A1'] = 'id'
-    ws['B1'] = 'result'
+    ws['A1'] = 'result'
     ws.cell(i+1,1).value = i
     ws.cell(i+1,2).value = result
     #保存
     filename = 'E:\\code\\vip3test\\Day3\\homework\\result.xlsx'
     wb.save(filename)
 
-#调用readExcel()函数，将所有sheet存储在L中
-L = readExcel()
-#调用returnSheet()函数，创建sheet1和sheet2
-L1 = returnSheet(L[0])
-print(L1)
-L2 = returnSheet(L[1])
-print(L2)
-#将sheet2中的数据由str转换成json，方便后面调用
-for i in range(1,len(L2)):
-    L2[i][1] = json.loads(L2[i][1])
-#执行第一条测试用例
-result = test1(L1,L2)
-#将结果存入新的Excel
-writeResult(1,result)
+# if __name__ == '__main__':
+#     readExcel()
+#     returnSheet()
+#     test1()
+#     writeResult()
+
+# #调用readExcel()函数，将所有sheet存储在L中
+# L = readExcel()
+# #调用returnSheet()函数，创建sheet1和sheet2
+# L1 = returnSheet(L[0])
+# print(L1)
+# L2 = returnSheet(L[1])
+# print(L2)
+# #将sheet2中的数据由str转换成json，方便后面调用
+# for i in range(1,len(L2)):
+#     L2[i][1] = json.loads(L2[i][1])
+# #执行第一条测试用例
+# result = test1(L1,L2)
+# #将结果存入新的Excel
+# writeResult(1,result)
 
